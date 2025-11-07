@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import type { Variants } from "motion/react";
+
 // images
 import Logo from "../../public/assets/iamges/logo 1.png";
 // css files
@@ -7,7 +9,7 @@ import "../styles/globale.css";
 export default function Header() {
   const [navOpen, setNavOpen] = useState(false);
 
-  const menuVariants = {
+  const menuVariants: Variants = {
     hidden: { opacity: 0, y: -30 },
     visible: {
       opacity: 1,
