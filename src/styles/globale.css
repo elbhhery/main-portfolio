@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* global styling */
+* {
+  transition: 0.3s ease;
+  font-family: "Raleway", sans-serif;
+  scroll-behavior: smooth;
+}
+.my-container {
+  margin: 0 auto;
+}
+button {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+/* navigation */
+.nav a {
+  position: relative;
+  color: #6a7282;
+}
+.nav a:hover {
+  color: white;
+}
+.desktopNav ul li a::before,
+.nav ul li a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #3587f2;
+  padding-right: 0.5rem;
+  bottom: -2px;
+  transform: scale(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+.desktopNav ul li:hover a::before,
+.nav ul li:hover a::before {
+  transform: scale(1);
+}
+/* links */
+.links ul li a::after,
+.links ul li a::before {
+  content: "";
+  position: absolute;
+  background-color: #33599bb1;
+}
+
+.links ul li a::after {
+  left: -10px;
+  width: 100%;
+  height: 20px;
+  bottom: -20px;
+  transform: rotate(0deg) skewX(-45deg);
+}
+
+.links ul li a::before {
+  top: 10px;
+  left: -20px;
+  height: 100%;
+  width: 20px;
+  transform: rotate(0deg) skewY(-45deg);
+}
+.links ul li a:hover {
+  transform: skew(25deg) translate(20px, -15px);
+  box-shadow: -20px 50px 50px rgba(0, 0, 0, 0.5);
+}
+/* Experience */
+
+.experience .card {
+  border-radius: 7px;
+}
+.card-1 {
+  box-shadow: 0 10px 10px rgba(243, 203, 6, 0.7);
+  animation: glow1 2s alternate infinite;
+}
+@keyframes glow1 {
+  from {
+    box-shadow: 0 6px 10px orange;
+  }
+  to {
+    box-shadow: 0 6px 6px rgba(42, 69, 80, 0.7);
+  }
+}
+.card-2 {
+  box-shadow: 0 10px 10px rgba(79, 170, 215, 0.7);
+  animation: glow2 2s alternate infinite;
+}
+@keyframes glow2 {
+  from {
+    box-shadow: 0 6px 10px rgba(79, 170, 215, 0.7);
+  }
+  to {
+    box-shadow: 0 6px 10px rgba(42, 69, 80, 0.7);
+  }
+}
+.card-3 {
+  box-shadow: 0 10px 10px rgba(79, 170, 215, 0.7);
+  animation: glow3 2s alternate infinite;
+}
+@keyframes glow3 {
+  from {
+    box-shadow: 0 6px 10px yellow;
+  }
+  to {
+    box-shadow: 0 6px 10px rgba(42, 69, 80, 0.7);
+  }
+}
+.card-4 {
+  box-shadow: 0 10px 10px rgba(58, 133, 171, 0.7);
+  animation: glow4 2s alternate infinite;
+}
+@keyframes glow4 {
+  from {
+    box-shadow: 0 6px 10px rgb(48, 140, 165);
+  }
+  to {
+    box-shadow: 0 6px 10px rgba(42, 69, 80, 0.7);
+  }
+}
+.card-5 {
+  box-shadow: 0 10px 10px rgba(125, 189, 66, 0.7);
+  animation: glow5 2s alternate infinite;
+}
+@keyframes glow5 {
+  from {
+    box-shadow: 0 10px 10px rgba(125, 189, 66, 0.7);
+  }
+  to {
+    box-shadow: 0 6px 10px rgba(42, 69, 80, 0.7);
+  }
+}
+.card-6 {
+  box-shadow: 0 10px 10px rgba(79, 170, 215, 0.7);
+  animation: glow6 2s alternate infinite;
+}
+@keyframes glow6 {
+  from {
+    box-shadow: 0 6px 10px rgba(139, 140, 140, 0.7);
+  }
+  to {
+    box-shadow: 0 6px 10px rgb(37, 36, 36);
+  }
+}
+.card-7 {
+  box-shadow: 0 10px 10px rgba(79, 170, 215, 0.7);
+  animation: glow7 2s alternate infinite;
+}
+@keyframes glow7 {
+  from {
+    box-shadow: 0 6px 10px white;
+  }
+  to {
+    box-shadow: 0 6px 10px rgb(37, 36, 36);
+  }
+}
+.card-8 {
+  box-shadow: 0 10px 10px rgba(8, 231, 79, 0.7);
+  animation: glow8 2s alternate infinite;
+}
+@keyframes glow8 {
+  from {
+    box-shadow: 0 10px 10px rgba(8, 231, 79, 0.7);
+  }
+  to {
+    box-shadow: 0 6px 10px rgb(37, 36, 36);
+  }
+}
+.card-9 {
+  box-shadow: 0 10px 10px #0da5f1b3;
+  animation: glow9 2s alternate infinite;
+}
+@keyframes glow9 {
+  from {
+    box-shadow: 0 6px 10px rgb(0, 191, 255);
+  }
+  to {
+    box-shadow: 0 6px 10px rgba(42, 69, 80, 0.7);
+  }
+}
+/* to top butoon */
+#toTop {
+  z-index: 50;
+  right: 20px;
+  bottom: 20px;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+/* media */
+@media (min-width: 768px) {
+  .my-container {
+    width: 660px;
+  }
+}
+@media (min-width: 992px) {
+  .my-container {
+    width: 880px;
+  }
+}
+@media (min-width: 1200px) {
+  .my-container {
+    width: 1040px;
+  }
+}
+@media (max-width: 868px) {
+  .side-bar {
+    display: none;
+  }
+}
