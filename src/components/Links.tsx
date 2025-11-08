@@ -3,7 +3,7 @@ export default function Links() {
   return (
     <div className="w-full relative  text-white  bg-linear-to-b from-gray-800 to-black">
       <div className="links">
-        <div className="container">
+        <div className="my-container">
           <ul className="flex justify-center items-center flex-col md:flex-row pt-18 gap-16 md:gap-16">
             <li>
               <a
