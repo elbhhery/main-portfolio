@@ -1,7 +1,27 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_7x781gm",
+        "template_qaw7gwi",
+        e.currentTarget,
+        "Fe7EtzUlXzzL9LnnV"
+      )
+      .then(
+        () => {
+          alert("تم إرسال الرسالة بنجاح ✅");
+          setForm({ name: "", email: "", message: "" });
+        },
+        () => alert("حدث خطأ ❌")
+      );
+  };
   return (
     <div
       id="contact"
@@ -11,12 +31,7 @@ export default function Contact() {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        onSubmit={(e) => {
-          e.preventDefault();
-          {
-            console.log(form);
-          }
-        }}
+        onSubmit={sendEmail}
         className="my-container text-center md:text-left px-6 md:px-0"
       >
         <h3 className="font-bold text-4xl border-b-4 border-gray-500 inline">
@@ -30,6 +45,8 @@ export default function Contact() {
             value={form.name}
             placeholder="Your Name..."
             type="text"
+            name="name"
+            required
           />
           <input
             className="border-2 border-white p-3 rounded-md"
@@ -37,14 +54,21 @@ export default function Contact() {
             value={form.email}
             type="email"
             placeholder="Your Email..."
+            name="email"
+            required
           />
           <textarea
             className="border-2 border-white h-60 p-3 rounded-md"
             onChange={(e) => setForm({ ...form, message: e.target.value })}
             value={form.message}
             placeholder="Your Message..."
+            name="message"
+            required
           ></textarea>
-          <button className="button py-2 px-4 bg-linear-to-r from-cyan-500 to-blue-500 w-40 my-0 mx-auto">
+          <button
+            type="submit"
+            className="button py-2 px-4 bg-linear-to-r from-cyan-500 to-blue-500 w-40 my-0 mx-auto"
+          >
             Send Message
           </button>
         </div>
