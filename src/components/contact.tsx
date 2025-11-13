@@ -14,6 +14,7 @@ export default function Contact() {
         e.currentTarget,
         "SC5xMpkuMscx86tM0"
       )
+
       .then(
         () => {
           alert("تم إرسال الرسالة بنجاح ✅");
